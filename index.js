@@ -89,6 +89,24 @@ app.get("/people",async (req,res)=>{
 
 })
 
+app.get("/people/:id",async (req,res)=>{
+
+    _id = req.params.id
+
+    People.findById(_id,(error,data)=>{
+        if(error){
+            res.send(error)
+        }
+        else{
+            res.send(data)
+        }
+    })
+
+    // res.send("hello from the other side")
+
+})
+
+
 app.patch("/person/:id",async(req,res)=>{
     try {
         const _id = req.params.id
