@@ -2,12 +2,13 @@
 const express = require('express')
 // const { useAsyncError } = require('react-router')
 const Poeple = require('./Model/People')
+// const MongoUrl = require('./env')
 
 //requiring routes from router folder
 const indiviDualroute =  require('./router/People')
 
 //setting dynamic ports
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 8001
 
 //creating a express function duplicate to play with
 const app = express()
