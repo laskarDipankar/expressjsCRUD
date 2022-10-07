@@ -55,7 +55,7 @@ app.use(indiviDualroute)
 //     res.send("lets beat it")
 // })
 
-app.post('/mongo',async(req,res)=>{
+app.post('/users',async(req,res)=>{
 
     try {
         
@@ -74,7 +74,7 @@ app.post('/mongo',async(req,res)=>{
 
     
 
-app.get("/people",async (req,res)=>{
+app.get("/users",async (req,res)=>{
 
     People.find({},(error,data)=>{
         if(error){
@@ -89,7 +89,7 @@ app.get("/people",async (req,res)=>{
 
 })
 
-app.get("/people/:id",async (req,res)=>{
+app.get("/user/:id",async (req,res)=>{
 
     _id = req.params.id
 
@@ -107,7 +107,7 @@ app.get("/people/:id",async (req,res)=>{
 })
 
 
-app.patch("/person/:id",async(req,res)=>{
+app.patch("/user/:id",async(req,res)=>{
     try {
         const _id = req.params.id
        const UpdatedPeople = await People.findByIdAndUpdate(_id,req.body,{
@@ -121,7 +121,7 @@ app.patch("/person/:id",async(req,res)=>{
 })
 
 //delete person
-app.delete("/remove/:id",async(req,res)=>{
+app.delete("/user/:id",async(req,res)=>{
     try {
         const _id = req.params.id
         const removePerson = await People.findByIdAndDelete(_id);
