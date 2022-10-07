@@ -89,7 +89,7 @@ app.get("/users",async (req,res)=>{
 
 })
 
-app.get("/user/:id",async (req,res)=>{
+app.get("/users/:id",async (req,res)=>{
 
     _id = req.params.id
 
